@@ -7,10 +7,10 @@ component {
 
   function onCLIExit() {
     if ( settings.cleanOnExit ) {
-      shell.callCommand( 'history type=command --clear' );
-      shell.callCommand( 'history type=scriptREPL --clear' );
-      shell.callCommand( 'history type=tagREPL --clear' );
-      shell.callCommand( 'server forget --all' );
+      shell.callCommand( 'clear-history' );
+      shell.callCommand( 'clear-system-log' );
+      shell.callCommand( 'clear-temp' );
+      shell.callCommand( 'server forget --all --force' );
     }
   }
 }
